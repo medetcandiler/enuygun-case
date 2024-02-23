@@ -13,16 +13,14 @@ export const metadata: Metadata = {
 
 const EmployeesLayout: FC<IEmployeesPageProps> = async ({ children }) => {
   const employees = await fetchEmployees();
-  console.log(employees, "in page");
-
   return (
-    <section>
-      {children}
+    <section style={{ display: "flex" }}>
       <div>
-      {employees.map((employee) => (
-        <EmployeeCard key={employee.id} {...employee} />
-      ))}
-    </div>
+        {employees.map((employee) => (
+          <EmployeeCard key={employee.id} {...employee} />
+        ))}
+      </div>
+      {children}
     </section>
   );
 };

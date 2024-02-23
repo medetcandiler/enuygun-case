@@ -23,3 +23,14 @@ query GetEmployee($id: String!) {
   }
 }
 `
+
+export const UPVOTE_EMPLOYEES_MUTATION = `
+  mutation UpvoteEmployeeMutation($id: String!) {
+    increaseVotes(id: $id) {
+      id,
+      name,
+      avatar,
+      votes
+    }
+  }
+`
