@@ -4,7 +4,9 @@ export const GET_EMPLOYEES_QUERY = `
     employees {
       id,
       name,
-      avatar
+      jobTitle,
+      avatar,
+      votes
     }
   }
 `;
