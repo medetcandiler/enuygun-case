@@ -1,5 +1,7 @@
 import { faker } from "@/lib/faker";
 import { IEmployee } from "@/helpers/employee/interface";
+import { fetcher } from "@/lib/fetcher";
+import { GET_EMPLOYEE_QUERY } from "@/constants";
 
 export function createRandomEmployee(): IEmployee {
   return {
@@ -13,3 +15,10 @@ export function createRandomEmployee(): IEmployee {
     votes: faker.number.int({ min: 0, max: 30 }),
   };
 }
+
+export const fetchEmployee = async (paramsId: string) => {
+  const res = await fetcher<{ employee: IEmployee }>(
+    JSON.stringify({ query: GET_EMPLOYEE_QUERY, variables: { id: paramsId } })
+  );
+  return res.employee;
+};

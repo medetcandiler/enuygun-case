@@ -4,6 +4,7 @@ import EmployeeCard from "../EmployeeCard";
 
 const Employees: FC = async () => {
   const employees = await fetchEmployees();
+
   return (
     <div>
       {employees.map((employee) => (
