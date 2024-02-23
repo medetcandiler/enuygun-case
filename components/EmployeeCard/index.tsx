@@ -12,7 +12,7 @@ const EmployeeCard: FC<IEmployee> = ({
 }) => {
   return (
     <div>
-      <Link href={`/${id}`}>
+      <Link href={`/employees/${id}`}>
         <Image src={avatar} alt={name} width={100} height={100} />
         <h2>{name}</h2>
         <h2>{jobTitle}</h2>

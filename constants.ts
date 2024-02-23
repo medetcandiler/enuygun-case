@@ -10,3 +10,16 @@ export const GET_EMPLOYEES_QUERY = `
     }
   }
 `;
+
+export const GET_EMPLOYEE_QUERY = `
+query GetEmployee($id: String!) {
+  employee(id: $id) {
+    id,
+    name,
+    email,
+    avatar,
+    birthdate,
+    registeredAt
+  }
+}
+`
