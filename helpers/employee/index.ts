@@ -1,5 +1,5 @@
-import {faker} from "@/lib/faker";
-import {IEmployee} from "@/helpers/employee/interface";
+import { faker } from "@/lib/faker";
+import { IEmployee } from "@/helpers/employee/interface";
 
 export function createRandomEmployee(): IEmployee {
   return {
@@ -7,9 +7,9 @@ export function createRandomEmployee(): IEmployee {
     name: faker.person.fullName(),
     email: faker.internet.email(),
     jobTitle: faker.person.jobTitle(),
-    avatar: faker.image.avatar(),
+    avatar: faker.image.urlLoremFlickr({ category: "people" }),
     birthdate: faker.date.birthdate(),
     registeredAt: faker.date.past(),
-    votes: faker.number.int({min: 0, max: 100}),
+    votes: faker.number.int({ min: 0, max: 30 }),
   };
 }
