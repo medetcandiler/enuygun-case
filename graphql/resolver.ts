@@ -12,7 +12,9 @@ export const resolvers = {
   },
   Mutations: {
     increaseVotes: (_: IEmployee, { id }: { id: string }) => {
-      let findEmployee = employees.find((employee) => employee.id === id);
+      let findEmployee = employees.find((employee) => {
+        return employee.id === id;
+      });
 
       if (findEmployee) {
         findEmployee.votes += 1;

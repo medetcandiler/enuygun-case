@@ -6,6 +6,5 @@ export async function fetcher<T = any>(body: string): Promise<T> {
     cache: "no-store",
   });
   const { data } = await res.json();
-
   return data;
 }
