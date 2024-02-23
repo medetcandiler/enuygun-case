@@ -1,1 +1,10 @@
-export const EMPLOYEES_COUNTER = 40
+export const EMPLOYEES_COUNTER = 20;
+export const GET_EMPLOYEES_QUERY = `
+  query GetEmployees {
+    employees {
+      id,
+      name,
+      avatar
+    }
+  }
+`;
