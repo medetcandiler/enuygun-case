@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { FC, ReactNode } from "react";
-import { fetchEmployees } from "@/helpers/employees";
-import EmployeeCard from "@/components/EmployeeCard";
+import EmployeesNav from "@/components/EmployeesNav";
 
 interface IEmployeesPageProps {
   children: ReactNode;
@@ -12,14 +11,9 @@ export const metadata: Metadata = {
 };
 
 const EmployeesLayout: FC<IEmployeesPageProps> = async ({ children }) => {
-  const employees = await fetchEmployees();
   return (
     <section style={{ display: "flex" }}>
-      <div>
-        {employees.map((employee) => (
-          <EmployeeCard key={employee.id} {...employee} />
-        ))}
-      </div>
+      <EmployeesNav />
       {children}
     </section>
   );
