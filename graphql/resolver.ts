@@ -23,15 +23,5 @@ export const resolvers = {
 
       return null;
     },
-    decreaseVotes: (_: IEmployee, { id }: { id: string }) => {
-      let findEmployee = employees.find((employee) => employee.id === id);
-
-      if (findEmployee) {
-        findEmployee.votes -= 1;
-        return findEmployee;
-      }
-
-      return null;
-    },
   },
 };

@@ -1,17 +1,11 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { fetchEmployees } from "@/helpers/employees";
-import EmployeeCard from "../EmployeeCard";
+import EmployeesWrapper from "../EmployeesWrapper";
 
 const Employees: FC = async () => {
   const employees = await fetchEmployees();
 
-  return (
-    <div>
-      {employees.map((employee) => (
-        <EmployeeCard key={employee.id} {...employee} />
-      ))}
-    </div>
-  );
+  return <EmployeesWrapper employees={employees} />;
 };
 
 export default Employees;
