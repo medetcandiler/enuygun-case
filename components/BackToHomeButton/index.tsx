@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   transition: all 0.3s ease;
 
   &:hover{
-    transform: scale(1.1)
+    transform: scale(1.2)
   }
 `;
 
@@ -26,8 +26,8 @@ const BackToHomeButton = () => {
     <StyledButton title="Back to home" onClick={() => handleClick()}>
       <Image
         src="/back-button.svg"
-        width={32}
-        height={32}
+        width={26}
+        height={26}
         alt="back button icon"
       />
     </StyledButton>

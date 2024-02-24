@@ -2,6 +2,7 @@
 import { FC } from "react";
 import { IEmployee } from "@/helpers/employee/interface";
 import Link from "next/link";
+import Image from "next/image";
 import styled from "styled-components";
 import { formatDate } from "@/lib/dateFormatter";
 
@@ -26,10 +27,8 @@ const SubContainer = styled.div`
   gap: 10px;
 `;
 
-const Avatar = styled.img`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+const Avatar = styled(Image)`
+  border-radius: 15px;
 `;
 
 const Label = styled.p`
@@ -56,11 +55,14 @@ const StyledLink = styled(Link)`
 
 const Votes = styled.span`
   position: absolute;
+  width: 45px;
+  display: grid;
+  place-content: center;
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
-  background: #2dc44c;
-  padding: 1rem;
+  background: rgba(45, 196, 76, 0.7);
+  padding: 10px;
   border-radius: 50%;
   color: #fff;
 `;
@@ -71,7 +73,7 @@ const EmployeeInfoCard: FC<{ employee: IEmployee }> = ({ employee }) => {
 
   return (
     <CardContainer>
-      <Avatar src={avatar} alt={name} />
+      <Avatar src={avatar} width={200} height={150} alt={name} priority />
       <SubContainer>
         <Label>
           İsim: <LabelContent>{name}</LabelContent>
