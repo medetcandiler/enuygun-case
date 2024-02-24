@@ -1,16 +1,19 @@
-import Link from "next/link";
-import Image from "next/image";
-import { IEmployee } from "@/helpers/employee/interface";
 import { FC } from "react";
+import { IEmployee } from "@/helpers/employee/interface";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styled from "styled-components";
+import Image from "next/image";
 
-const Name = styled.h1`
+interface EmployeesNavCardProps extends IEmployee {}
+
+const Name = styled.h1<{ isActive: boolean }>`
   font-size: 16px;
-  margin: 0;
   transition: all 0.3s ease;
+  color: ${(props) => (props.isActive ? "blue" : "inherit")};
 `;
 
-const Avatar = styled.img`
+const Avatar = styled(Image)`
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -30,20 +33,21 @@ const CardContainer = styled.div`
     & ${Name} {
       color: blue;
     }
-    & ${Avatar}{
-      transform: scale(1.05)
+    & ${Avatar} {
+      transform: scale(1.05);
     }
   }
 `;
 
+const EmployeesNavCard: FC<EmployeesNavCardProps> = ({ id, name, avatar }) => {
+  const pathname = usePathname();
+  const isActive = pathname === `/employees/${id}`;
 
-
-const EmployeesNavCard: FC<IEmployee> = ({ id, name, jobTitle, avatar }) => {
   return (
-    <Link href={`/employees/${id}`} passHref>
+    <Link href={`/employees/${id}`}>
       <CardContainer>
-        <Avatar src={avatar} alt={`${name}'s avatar`} />
-        <Name>{name}</Name>
+        <Avatar src={avatar} width={50} height={50} alt={`${name}'s avatar`} />
+        <Name isActive={isActive}>{name}</Name>
       </CardContainer>
     </Link>
   );

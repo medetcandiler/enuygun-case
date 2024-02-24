@@ -19,7 +19,9 @@ query GetEmployee($id: String!) {
     email,
     avatar,
     birthdate,
-    registeredAt
+    registeredAt,
+    jobTitle,
+    votes
   }
 }
 `

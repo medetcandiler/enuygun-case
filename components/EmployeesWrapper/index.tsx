@@ -8,8 +8,8 @@ const SectionContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 20px;
-  padding: 20px;
+  gap: 3rem;
+  padding: 100px;
   background-color: #f4f4f4;
 `;
 
