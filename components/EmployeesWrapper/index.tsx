@@ -9,7 +9,7 @@ const SectionContainer = styled.section`
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 3rem;
-  padding: 100px;
+  padding: 0 100px 50px;
   background-color: #f4f4f4;
 `;
 
