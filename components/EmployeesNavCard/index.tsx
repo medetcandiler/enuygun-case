@@ -7,10 +7,9 @@ import Image from "next/image";
 
 interface EmployeesNavCardProps extends IEmployee {}
 
-const Name = styled.h1<{ isActive: boolean }>`
+const Name = styled.h1`
   font-size: 16px;
   transition: all 0.3s ease;
-  color: ${(props) => (props.isActive ? "blue" : "inherit")};
 `;
 
 const Avatar = styled(Image)`
@@ -47,7 +46,9 @@ const EmployeesNavCard: FC<EmployeesNavCardProps> = ({ id, name, avatar }) => {
     <Link href={`/employees/${id}`}>
       <CardContainer>
         <Avatar src={avatar} width={50} height={50} alt={`${name}'s avatar`} />
-        <Name isActive={isActive}>{name}</Name>
+        <Name className={isActive ? "active" : ""}>
+          {name}
+        </Name>
       </CardContainer>
     </Link>
   );
