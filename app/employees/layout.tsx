@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "ENUYGUN | ÇALIŞANLAR",
 };
 
-const EmployeesLayout: FC<IEmployeesPageProps> = async ({ children }) => {
+const EmployeesLayout: FC<IEmployeesPageProps> = ({ children }) => {
   return (
     <section style={{ display: "flex" }}>
       <EmployeesNav />

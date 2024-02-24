@@ -17,8 +17,13 @@ export function createRandomEmployee(): IEmployee {
 }
 
 export const fetchEmployee = async (paramsId: string) => {
-  const res = await fetcher<{ employee: IEmployee }>(
-    JSON.stringify({ query: GET_EMPLOYEE_QUERY, variables: { id: paramsId } })
-  );
-  return res.employee;
+  try {
+    const res = await fetcher<{ employee: IEmployee }>(
+      JSON.stringify({ query: GET_EMPLOYEE_QUERY, variables: { id: paramsId } })
+    );
+    return res.employee;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 };

@@ -85,7 +85,11 @@ const EmployeeCard: FC<IEmployee> = ({ id, name, jobTitle, avatar, votes }) => {
     const res = await fetcher(
       JSON.stringify({ query: UPVOTE_EMPLOYEES_MUTATION, variables: { id } })
     );
-    setLocaleVote(res.increaseVotes.votes);
+    if (res.increaseVotes !== null) {
+      setLocaleVote(res.increaseVotes.votes);
+    } else {
+      console.log("Unable to retrieve updated vote count");
+    }
   };
   return (
     <CardContainer>
@@ -102,7 +106,7 @@ const EmployeeCard: FC<IEmployee> = ({ id, name, jobTitle, avatar, votes }) => {
       </StyledLink>
       <Votes>{localeVote}</Votes>
       <VoteButton onClick={() => handleUpVote()}>
-      {name.split(" ")[0]} için oy ver
+        {name.split(" ")[0]} için oy ver
       </VoteButton>
     </CardContainer>
   );
