@@ -7,7 +7,7 @@ interface IEmployeesPageProps {
 }
 
 export const metadata: Metadata = {
-  title: "ENUYGUN | EMPLOYEES",
+  title: "ENUYGUN | ÇALIŞANLAR",
 };
 
 const EmployeesLayout: FC<IEmployeesPageProps> = async ({ children }) => {
