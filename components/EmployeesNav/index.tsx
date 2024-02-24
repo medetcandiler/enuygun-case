@@ -2,6 +2,7 @@
 import { fetchEmployees } from "@/helpers/employees";
 import EmployeesNavCard from "../EmployeesNavCard";
 import styled from "styled-components";
+import BackToHomeButton from "../BackToHomeButton";
 
 const Nav = styled.nav`
   width: auto;
@@ -15,6 +16,7 @@ const EmployeesNav = async () => {
   const employees = await fetchEmployees();
   return (
     <Nav>
+      <BackToHomeButton />
       {employees.map((employee) => (
         <EmployeesNavCard key={employee.id} {...employee} />
       ))}
