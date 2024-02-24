@@ -1,5 +1,6 @@
-"use client";
+'use client'
 import styled from "styled-components";
+
 const LandingPageSection = styled.section`
   background-color: #f4f4f4;
   padding: 50px 120px;
@@ -21,12 +22,12 @@ const Description = styled.p`
 const PurposeSection = () => {
   return (
     <LandingPageSection>
-      <Heading>Welcome to Employee of the Month Selection</Heading>
+      <Heading>Ayın Çalışanını Seçmeye Hoş Geldiniz</Heading>
       <Description>
-        Our platform provides a seamless way to nominate and select the Employee
-        of the Month, recognizing outstanding contributions and achievements
-        within our organization. Start nominating and celebrating excellence
-        today!
+        Platformumuz, organizasyonumuz içindeki olağanüstü katkıları ve
+        başarıları tanımlamak için Ayın Çalışanını aday gösterme ve seçme
+        sürecini sorunsuz bir şekilde sağlar. Bugün olağanüstü başarıları
+        aday göstermeye ve kutlamaya başlayın!
       </Description>
     </LandingPageSection>
   );

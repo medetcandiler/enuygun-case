@@ -74,21 +74,21 @@ const EmployeeInfoCard: FC<{ employee: IEmployee }> = ({ employee }) => {
       <Avatar src={avatar} alt={name} />
       <SubContainer>
         <Label>
-          Name: <LabelContent>{name}</LabelContent>
+          İsim: <LabelContent>{name}</LabelContent>
         </Label>
         <Label>
-          Title: <LabelContent>{jobTitle}</LabelContent>
+          Ünvan: <LabelContent>{jobTitle}</LabelContent>
         </Label>
         <StyledLink href={`mailto:${email.toLocaleLowerCase()}`}>
-          <Label>Email:</Label>{" "}
+          <Label>E-posta:</Label>{" "}
           <EmailLabel>{email.toLocaleLowerCase()}</EmailLabel>
         </StyledLink>
         <Label>
-          Birthdate:{" "}
+          Doğum Tarihi:{" "}
           <LabelContent>{formatDate(birthdate.toString())}</LabelContent>
         </Label>
         <Label>
-          Start Date:{" "}
+          İşe Başlama Tarihi:{" "}
           <LabelContent>{formatDate(registeredAt.toString())}</LabelContent>
         </Label>
       </SubContainer>

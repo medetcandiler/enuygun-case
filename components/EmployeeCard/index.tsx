@@ -102,7 +102,7 @@ const EmployeeCard: FC<IEmployee> = ({ id, name, jobTitle, avatar, votes }) => {
       </StyledLink>
       <Votes>{localeVote}</Votes>
       <VoteButton onClick={() => handleUpVote()}>
-        Vote for {name.split(" ")[0]}
+      {name.split(" ")[0]} için oy ver
       </VoteButton>
     </CardContainer>
   );
