@@ -11,10 +11,15 @@ export const createRandomEmployees = (): IEmployees =>
   });
 
 export const fetchEmployees = async () => {
-  const res = await fetcher<{ employees: IEmployees }>(
-    JSON.stringify({ query: GET_EMPLOYEES_QUERY })
-  );
-  const { employees } = res;
+  try {
+    const res = await fetcher<{ employees: IEmployees }>(
+      JSON.stringify({ query: GET_EMPLOYEES_QUERY })
+    );
+    const { employees } = res;
 
-  return sorter(employees);
+    return sorter(employees);
+  } catch (error) {
+    console.log(error);
+    throw new Error("Faild to fetch data!");
+  }
 };

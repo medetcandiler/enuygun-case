@@ -12,7 +12,6 @@ export const typeDefs = gql`
 
   type Mutations {
     increaseVotes(id: String!): Employee
-    decreaseVotes(id: String!): Employee
   }
 
   type Employee {
