@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns:[
+    remotePatterns: [
       {
         protocol: 'https',
         hostname: 'loremflickr.com',
@@ -10,7 +10,8 @@ const nextConfig = {
   },
   compiler: {
     styledComponents: true,
-  }
+  },
+  swcMinify: false
 };
 
 
