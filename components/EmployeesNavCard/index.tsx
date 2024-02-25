@@ -10,6 +10,10 @@ interface EmployeesNavCardProps extends IEmployee {}
 const Name = styled.h1`
   font-size: 16px;
   transition: all 0.3s ease;
+
+  @media (max-width: 700px) {
+    white-space: nowrap;
+  }
 `;
 
 const Avatar = styled(Image)`
@@ -23,17 +27,18 @@ const Avatar = styled(Image)`
 const CardContainer = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+  border-bottom: 1px solid;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: #fff;
 
   &:hover {
     & ${Name} {
-      color: blue;
+      color: #387ADF;
     }
     & ${Avatar} {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
   }
 `;
@@ -46,9 +51,7 @@ const EmployeesNavCard: FC<EmployeesNavCardProps> = ({ id, name, avatar }) => {
     <Link href={`/employees/${id}`}>
       <CardContainer>
         <Avatar src={avatar} width={50} height={50} alt={`${name}'s avatar`} />
-        <Name className={isActive ? "active" : ""}>
-          {name}
-        </Name>
+        <Name className={isActive ? "active" : ""}>{name}</Name>
       </CardContainer>
     </Link>
   );

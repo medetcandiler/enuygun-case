@@ -8,9 +8,9 @@ const page = async ({ params }: { params: { id: string } }) => {
   if (employee === null) return redirect("/");
 
   return (
-    <section style={{ height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    <>
       <EmployeeInfoCard employee={employee} />
-    </section>
+    </>
   );
 };
 

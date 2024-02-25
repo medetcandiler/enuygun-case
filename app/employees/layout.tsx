@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const EmployeesLayout: FC<IEmployeesPageProps> = ({ children }) => {
   return (
-    <section style={{ display: "flex" }}>
+    <section className="employees-layout">
       <EmployeesNav />
       {children}
     </section>
