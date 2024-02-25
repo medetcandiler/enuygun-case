@@ -28,12 +28,12 @@ const CardContainer = styled.div`
   color: #212529;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 50px;
+  padding: 50px 80px;
 
   @media (max-width: 700px) {
-    padding: 30px;
+    padding: 50px 90px;
   }
-  @media (max-width: 350px) {
+  @media (max-width: 450px) {
     padding: 15px;
   }
 `;
@@ -44,10 +44,18 @@ const SubContainer = styled.div`
   align-items: start;
   white-space: normal;
   gap: 1rem;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Avatar = styled(Image)`
   border-radius: 15px;
+
+  @media (max-width: 700px) {
+    width: 150px;
+    height: 100px;
+  }
 `;
 
 const Label = styled.p`

@@ -1,4 +1,3 @@
-export const EMPLOYEES_COUNTER = 20;
 export const GET_EMPLOYEES_QUERY = `
   query GetEmployees {
     allEmployees {

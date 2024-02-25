@@ -1,10 +1,10 @@
-import React from "react";
+"use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  position: absolute;
+  position: fixed;
   top: 1rem;
   left: 1rem;
   border: none;
@@ -17,6 +17,11 @@ const StyledButton = styled.button`
 
   &:hover {
     transform: scale(1.2);
+  }
+
+  @media (max-widt: 700px) {
+    top: 10px;
+    left: 10px;
   }
 `;
 

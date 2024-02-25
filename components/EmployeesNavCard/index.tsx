@@ -1,3 +1,4 @@
+"use client";
 import { FC } from "react";
 import { IEmployee } from "@/helpers/employee/interface";
 import Link from "next/link";
@@ -35,7 +36,7 @@ const CardContainer = styled.div`
 
   &:hover {
     & ${Name} {
-      color: #387ADF;
+      color: #387adf;
     }
     & ${Avatar} {
       transform: scale(1.1);
