@@ -7,7 +7,7 @@ import BackToHomeButton from "../BackToHomeButton";
 const Nav = styled.nav`
   position: relative;
   width: auto;
-  background-color: #2DC44C;
+  background-color: #2dc44c;
   padding: 50px 25px;
   height: 100vh;
   overflow-y: auto;
@@ -25,10 +25,11 @@ const Nav = styled.nav`
 
 const EmployeesNav = async () => {
   const employees = await fetchEmployees();
+
   return (
     <Nav>
       <BackToHomeButton />
-      {employees.map((employee) => (
+      {employees!.map((employee) => (
         <EmployeesNavCard key={employee.id} {...employee} />
       ))}
     </Nav>

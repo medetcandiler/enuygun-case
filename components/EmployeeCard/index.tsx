@@ -2,7 +2,7 @@
 import { FC, useState } from "react";
 import { IEmployee } from "@/helpers/employee/interface";
 import { fetcher } from "@/lib/fetcher";
-import { UPVOTE_EMPLOYEES_MUTATION } from "@/constants";
+import { UPVOTE_EMPLOYEE_MUTATION } from "@/constants";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
@@ -82,13 +82,21 @@ const StyledImage = styled(Image)`
 const EmployeeCard: FC<IEmployee> = ({ id, name, jobTitle, avatar, votes }) => {
   const [localeVote, setLocaleVote] = useState(votes);
   const handleUpVote = async () => {
-    const res = await fetcher(
-      JSON.stringify({ query: UPVOTE_EMPLOYEES_MUTATION, variables: { id } })
-    );
-    if (res.increaseVotes !== null) {
-      setLocaleVote(res.increaseVotes.votes);
-    } else {
-      console.log("Unable to retrieve updated vote count");
+    try {
+      const { updateEmployee } = await fetcher(
+        JSON.stringify({ query: UPVOTE_EMPLOYEE_MUTATION, variables: { id, votes: localeVote } })
+      );
+      console.log(updateEmployee)
+
+      if (updateEmployee !== null) {
+        updateEmployee.votes += 1;
+        console.log(updateEmployee.votes);
+        setLocaleVote((prevVotes) => prevVotes + 1);
+      } else {
+        console.log("Unable to retrieve updated vote count");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
