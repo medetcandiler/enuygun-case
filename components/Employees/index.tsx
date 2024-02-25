@@ -5,7 +5,7 @@ import EmployeesWrapper from "../EmployeesWrapper";
 const Employees: FC = async () => {
   const employees = await fetchEmployees();
 
-  return <EmployeesWrapper employees={employees} />;
+  return <EmployeesWrapper employees={employees!} />;
 };
 
 export default Employees;
