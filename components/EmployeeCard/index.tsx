@@ -80,18 +80,17 @@ const StyledImage = styled(Image)`
 `;
 
 const EmployeeCard: FC<IEmployee> = ({ id, name, jobTitle, avatar, votes }) => {
-  const [localeVote, setLocaleVote] = useState(votes);
+  const [localeVote, setLocaleVote] = useState(votes + 1);
   const handleUpVote = async () => {
     try {
       const { updateEmployee } = await fetcher(
-        JSON.stringify({ query: UPVOTE_EMPLOYEE_MUTATION, variables: { id, votes: localeVote } })
+        JSON.stringify({
+          query: UPVOTE_EMPLOYEE_MUTATION,
+          variables: { id, votes: localeVote },
+        })
       );
-      console.log(updateEmployee)
-
       if (updateEmployee !== null) {
-        updateEmployee.votes += 1;
-        console.log(updateEmployee.votes);
-        setLocaleVote((prevVotes) => prevVotes + 1);
+        setLocaleVote(updateEmployee.votes + 1);
       } else {
         console.log("Unable to retrieve updated vote count");
       }
