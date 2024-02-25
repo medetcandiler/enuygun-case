@@ -5,11 +5,22 @@ import styled from "styled-components";
 import BackToHomeButton from "../BackToHomeButton";
 
 const Nav = styled.nav`
+  position: relative;
   width: auto;
-  background-color: #f0f0f0;
-  padding: 20px;
+  background-color: #2DC44C;
+  padding: 50px 25px;
   height: 100vh;
   overflow-y: auto;
+
+  @media (max-width: 700px) {
+    width: full;
+    display: flex;
+    flex: nowrap;
+    align-items: center;
+    gap: 1rem;
+    height: 100px;
+    padding: 25px 50px;
+  }
 `;
 
 const EmployeesNav = async () => {

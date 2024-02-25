@@ -6,25 +6,44 @@ import Image from "next/image";
 import styled from "styled-components";
 import { formatDate } from "@/lib/dateFormatter";
 
+const CardSection = styled.section`
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+
+  @media (max-width: 700px) {
+    height: calc(100vh - 100px);
+  }
+`;
+
 const CardContainer = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
+  position: relative;
   background-color: #ffffff;
   color: #212529;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 50px;
+
+  @media (max-width: 700px) {
+    padding: 30px;
+  }
+  @media (max-width: 350px) {
+    padding: 15px;
+  }
 `;
 
 const SubContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 10px;
+  white-space: normal;
+  gap: 1rem;
 `;
 
 const Avatar = styled(Image)`
@@ -33,6 +52,13 @@ const Avatar = styled(Image)`
 
 const Label = styled.p`
   font-weight: bold;
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
 `;
 
 const LabelContent = styled.span`
@@ -51,6 +77,11 @@ const EmailLabel = styled.span`
 const StyledLink = styled(Link)`
   display: flex;
   gap: 5px;
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const Votes = styled.span`
@@ -72,30 +103,32 @@ const EmployeeInfoCard: FC<{ employee: IEmployee }> = ({ employee }) => {
     employee;
 
   return (
-    <CardContainer>
-      <Avatar src={avatar} width={200} height={150} alt={name} priority />
-      <SubContainer>
-        <Label>
-          İsim: <LabelContent>{name}</LabelContent>
-        </Label>
-        <Label>
-          Ünvan: <LabelContent>{jobTitle}</LabelContent>
-        </Label>
-        <StyledLink href={`mailto:${email.toLocaleLowerCase()}`}>
-          <Label>E-posta:</Label>{" "}
-          <EmailLabel>{email.toLocaleLowerCase()}</EmailLabel>
-        </StyledLink>
-        <Label>
-          Doğum Tarihi:{" "}
-          <LabelContent>{formatDate(birthdate.toString())}</LabelContent>
-        </Label>
-        <Label>
-          İşe Başlama Tarihi:{" "}
-          <LabelContent>{formatDate(registeredAt.toString())}</LabelContent>
-        </Label>
-      </SubContainer>
-      <Votes>{votes}</Votes>
-    </CardContainer>
+    <CardSection>
+      <CardContainer>
+        <Avatar src={avatar} width={250} height={150} alt={name} priority />
+        <SubContainer>
+          <Label>
+            İsim: <LabelContent>{name}</LabelContent>
+          </Label>
+          <Label>
+            Ünvan: <LabelContent>{jobTitle}</LabelContent>
+          </Label>
+          <StyledLink href={`mailto:${email.toLocaleLowerCase()}`}>
+            <Label>E-posta:</Label>{" "}
+            <EmailLabel>{email.toLocaleLowerCase()}</EmailLabel>
+          </StyledLink>
+          <Label>
+            Doğum Tarihi:{" "}
+            <LabelContent>{formatDate(birthdate.toString())}</LabelContent>
+          </Label>
+          <Label>
+            İşe Başlama Tarihi:{" "}
+            <LabelContent>{formatDate(registeredAt.toString())}</LabelContent>
+          </Label>
+        </SubContainer>
+        <Votes>{votes}</Votes>
+      </CardContainer>
+    </CardSection>
   );
 };
 

@@ -4,6 +4,9 @@ import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   border: none;
   background: none;
   padding: 0;
@@ -12,8 +15,8 @@ const StyledButton = styled.button`
   outline: none;
   transition: all 0.3s ease;
 
-  &:hover{
-    transform: scale(1.2)
+  &:hover {
+    transform: scale(1.2);
   }
 `;
 

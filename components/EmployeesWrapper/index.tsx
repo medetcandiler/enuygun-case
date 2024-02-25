@@ -11,6 +11,10 @@ const SectionContainer = styled.section`
   gap: 3rem;
   padding: 0 100px 50px;
   background-color: #f4f4f4;
+
+  @media (max-width: 600px) {
+    padding: 0 30px 50px;
+  }
 `;
 
 const EmployeesWrapper: FC<{ employees: IEmployees }> = ({ employees }) => {
