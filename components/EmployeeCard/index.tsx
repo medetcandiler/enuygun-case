@@ -86,7 +86,7 @@ const EmployeeCard: FC<IEmployee> = ({ id, name, jobTitle, avatar, votes }) => {
       await fetcher(
         JSON.stringify({
           query: UPVOTE_EMPLOYEE_MUTATION,
-          variables: { id, votes: localeVote },
+          variables: { id, votes: localeVote + 1 },
         })
       );
       const { Employee } = await fetcher(
@@ -96,7 +96,7 @@ const EmployeeCard: FC<IEmployee> = ({ id, name, jobTitle, avatar, votes }) => {
         })
       );
       if (Employee !== null) {
-        setLocaleVote(Employee.votes + 1);
+        setLocaleVote(Employee.votes);
       } else {
         console.log("Unable to retrieve updated vote count");
       }

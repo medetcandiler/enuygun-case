@@ -6,7 +6,7 @@
     "dev": "npm run runJson & next dev",
     "build": "next build",
     "start": "npm run runJson & next start",
-    "runJson" : "json-graphql-server db.js --p 4000",
+    "runJson" : "json-graphql-server db.js --p 4001",
     "lint": "next lint"
   },
   "dependencies": {
