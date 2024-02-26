@@ -30,11 +30,14 @@ const CardContainer = styled.div`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 50px 80px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 650px) {
     padding: 50px 90px;
   }
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
     padding: 15px;
+  }
+  @media (max-width: 350) {
+    padding: 5px;
   }
 `;
 
@@ -70,7 +73,6 @@ const Label = styled.p`
 `;
 
 const LabelContent = styled.span`
-  font-weight: normal;
   color: #343a40;
 `;
 

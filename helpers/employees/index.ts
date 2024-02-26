@@ -1,6 +1,4 @@
-import { faker } from "../../lib/faker";
 import { IEmployees } from "./interface";
-import { createRandomEmployee } from "../employee";
 import { GET_EMPLOYEES_QUERY } from "@/constants";
 import { fetcher } from "@/lib/fetcher";
 import { sorter } from "@/lib/sorter";
