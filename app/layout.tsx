@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body className={montserrat.className}>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
