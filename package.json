@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run runJson & next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "npm run runJson & next start",
-    "runJson" : "json-graphql-server db.js --p 4001",
+    "json" : "json-graphql-server db.js --p 4002",
     "lint": "next lint"
   },
   "dependencies": {
