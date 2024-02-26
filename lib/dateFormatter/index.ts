@@ -1,5 +1,4 @@
 export const formatDate = (dateString: string) => {
-  return new Intl.DateTimeFormat("en-US").format(
-    new Date(parseInt(dateString))
-  );
+  const timestamp = new Date(dateString).getTime();
+  return new Intl.DateTimeFormat("tr-TR").format(timestamp);
 };
